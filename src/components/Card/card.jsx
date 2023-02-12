@@ -1,5 +1,5 @@
 import React from "react";
-import './style.css'
+import './card.css'
 
 const Card = ({text, price, img}) => {
     const imgStyle ={

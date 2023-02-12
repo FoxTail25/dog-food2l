@@ -1,0 +1,27 @@
+header {
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px calc(50% - 500px);
+}
+
+@media (max-width: 1060px) {
+    header {
+        padding: 16px 30px;
+    }
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+input {
+    width: 400px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding: 6px 12px;
+}
