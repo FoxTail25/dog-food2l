@@ -14,10 +14,11 @@
 
 .card__price {
     font-weight: 800;
-
+    
 }
 
-.card__price {
+.card__text {
+    font-weight: 700;
     font-size: 12px;
 
 }
