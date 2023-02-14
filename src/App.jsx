@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import Card from "./components/Card/card";
+import { Header } from "./components/Header/header";
+import { Footer } from "./components/Footer/footer";
 
 import data from './assets/data.json'
-import { Header } from "./components/Header/header";
 
 export const App = () => {
 
@@ -22,6 +23,7 @@ export const App = () => {
                     />)
                 }
             </div>
+            <Footer/>
         </div>
     )
 }
