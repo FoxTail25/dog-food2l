@@ -1,16 +1,5 @@
 [
-	{
-		"name": "Желудки утиные сушено-вяленые",
-		"price": 550,
-		"discount": 15,
-		"wight": "100 г",
-		"description": "Описание demo",
-		"isFavorite": false,
-		"isCart": false,
-		"available": true,
-		"stock": 10,
-		"picture": "https://react-learning.ru/image-compressed/1.jpg"
-	},
+
 	{
 		"name": "Куриные желудочки для собак",
 		"price": 450,
