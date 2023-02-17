@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Logo from "../Logo/logo";
-import './header.css'
+import '../../style/header.css'
 import { ReactComponent as FavIcon } from "./img/favorites.svg"
 import { ReactComponent as Cart } from "./img/cart.svg"
 import { ReactComponent as Prof } from "./img/profile.svg"
 
-export const Header = ({products, update}) => {
+export const Header = ({products, setGoods, openPopup}) => {
 
     
     const [text, setSearch] = useState('')
@@ -17,9 +17,9 @@ export const Header = ({products, update}) => {
         const result = products.filter((el => el.name.toLowerCase().search(e.target.value.toLowerCase()) !== -1 ))
         setCnt(result.length)
         if (!text) {
-            update(products)
+            setGoods(products)
         } else (
-            update(result)
+            setGoods(result)
         )
     }
 
@@ -33,7 +33,7 @@ export const Header = ({products, update}) => {
                 <nav>
                     <a href=""><FavIcon /></a>
                     <a href=""><Cart /></a>
-                    <a href=""><Prof /></a>
+                    <a href="" onClick={(e) => {e.preventDefault(); openPopup(true)}}><Prof /></a>
                 </nav>
 
             </header>

@@ -1,0 +1,45 @@
+.popup-box {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #0006;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.popup-active {
+    display: flex;
+}
+.popup {
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+.popup-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: red;
+    cursor: pointer;
+    /* filter: drop-shadow(0px 0px 4px red); */
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 5px red, 0px 0px 7px red;
+    animation: rotate 2s linear infinite;
+}
+@keyframes rotate {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}

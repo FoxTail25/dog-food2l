@@ -5,6 +5,8 @@
     display: grid;
     flex-direction: column;
     gap: 10px;
+    min-width: 200px;
+    max-width: 200px;
 }
 
 .card__img {
@@ -31,7 +33,6 @@
     padding: 8px 12px;
     font-weight: 700;
     background-color: var(--main-color);
-    /* height: max-content
-    ; */
+    height: max-content;
     align-self: flex-end;
 }

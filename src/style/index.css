@@ -1,18 +1,25 @@
 :root {
- --main-color: #ffe44d;
+	--main-color: #ffe44d;
 }
 
 body {
 	margin: 0;
 	font-family: "Nunito", "Arial", "Helvetica", sans-serif;
 }
+
 a {
 	text-decoration: none;
 	color: inherit;
 }
+
 .wrapper {
 	min-height: 100vh;
 	/* background-color: bisque; */
+	display: flex;
+	flex-direction: column;
+}
+.inner {
+	flex:1;
 }
 
 .cards-container {
@@ -22,4 +29,17 @@ a {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 30px;
+}
+
+@media (max-width: 1000px) {
+
+	.cards-container {
+		max-width: 100vw;
+		margin: auto;
+		padding: 10px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 30px;
+	}
 }
