@@ -17,41 +17,67 @@ export const App = () => {
     // стейт токена
     const [token, setToken] = useState(localStorage.getItem('shopUser'))
 
+    console.log("токен сейчас", token)
+
     // стейт попАпа
     const [popupActive, setPopupActive] = useState(false)
 
     // стейт API
     const [api, setApi] = useState(new Api(token))
 
+    // стейт пользователя
+    const [userData, setUserData] = useState('')
+
+    console.log('данные пользователя', userData)
 
     useEffect(() => {
-        console.log('user is changed')
         setApi(new Api(token))
+        console.log('получено новое АПИ с токеном', token)
     }, [token])
-
-    useEffect(async () => {
-
-        let data = await api.getProducts();
-
-        setGoods(data.products);
-        setData(data.products);
-    }, [])
+    
+    useEffect( () => {
+        // console.log('user is changed')
+        if (token) {
+            api.getProducts().then(data => {
+            setGoods(data.products);
+            setData(data.products);
+            console.log("отработал useEffect data = ", data)
+            })
+            // api.userInfo().then(info => console.log(info))
+        } else { 
+            setGoods([]);
+            setData([]);
+        }
+    }, [api])
 
 
     return (
         <>
             <div className="wrapper">
 
-                <Header products={data} setGoods={setGoods} openPopup={setPopupActive} />
+                <Header products={data}
+                 setGoods={setGoods}
+                 openPopup={setPopupActive} 
+                 token={!!token} 
+                 setToken={setToken} />
                 <div className="inner">
-                <Home/>
-                {/* <Catalog goods={goods} /> */}
+                    {/* <Home/> */}
+                    <Catalog goods={goods} />
                 </div>
                 <Footer />
 
             </div>
 
-            <Modal isActive={popupActive} closePopup={setPopupActive} />
+            {
+                !token && <Modal
+                    isActive={popupActive}
+                    closePopup={setPopupActive}
+                    api={api}
+                    setApi={setApi}
+                    setToken={setToken}
+                    setUserData={setUserData}
+                />
+            }
         </>
     )
 }

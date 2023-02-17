@@ -74,7 +74,8 @@ class Api {
         return fetch('https://api.react-learning.ru/signin', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                "Accept": "application/json"
             },
             body: JSON.stringify(user),
         }).then(onResponce)
@@ -87,6 +88,13 @@ class Api {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(user),
+        }).then(onResponce)
+    }
+    userInfo() {
+        return fetch(`${this.path}/v2/group-7/users/me`, {
+            headers: {
+                Authorization: `Bearer ${this.token}`
+            }
         }).then(onResponce)
     }
 }

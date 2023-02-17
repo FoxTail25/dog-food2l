@@ -2,6 +2,7 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Display } from 'react-bootstrap-icons'
 import Logo from '../Logo/logo'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import '../../style/footer.css'
 
